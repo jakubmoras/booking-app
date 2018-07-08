@@ -1,0 +1,10 @@
+#restaurant-photo-1 {
+    width: 400px;
+}
+
+#restaurant-photo-2{
+    width: 500px;
+    height: 200px;
+    background-image: url("https://www.tropical-islands.de/fileadmin/_processed_/csm_TI_RESTAURANT_PALMBEACH4_RGB_2000x860_70f4da8db5.jpg");
+    background-size: cover;
+}
