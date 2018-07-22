@@ -10,10 +10,10 @@ angular.module('bookingApp').config(['$routeProvider', function config($routePro
             templateUrl: 'src/views/create.html'
         })
         .when('/list', {
+            controller: listBookingsController,
             templateUrl: 'src/views/list.html'
         })
         .otherwise('/');
-}
-]);
+}]);
 
 angular.module('bookingApp').service('bookingsStorageService', bookingsStorageService);

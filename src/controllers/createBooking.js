@@ -2,7 +2,9 @@
 // Scope's data used on View are called binding {{ }}
 // View <- scope -> Controller
 
-function createBookingController($scope, bookingsStorageService) {
+function createBookingController($scope, $timeout, bookingsStorageService) {
+
+    $scope.bookingSuccessMessage = false;
 
     $scope.formData = {}; // declare empty object
 
@@ -10,5 +12,9 @@ function createBookingController($scope, bookingsStorageService) {
         var booking = angular.copy($scope.formData, {});
         bookingsStorageService.addBooking(booking);
         $scope.formData = {};
+        $scope.bookingSuccessMessage = true;
+        $timeout(function () {
+            $scope.bookingSuccessMessage = false;
+        }, 3000);
     }
 }
