@@ -2,6 +2,8 @@ function listBookingsController($scope, bookingsStorageService) {
 
     $scope.bookings = bookingsStorageService.getBookings();
 
+    $scope.filterPhrase;
+
     $scope.sortConfig = {
         text: '',
         sign: '',

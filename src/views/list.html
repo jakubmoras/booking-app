@@ -1,40 +1,63 @@
-<h2>Lista rezerwacji</h2>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th class="clickable" ng-click="toggleSort('eventType')"
-            ng-class="{'text-primary': sortConfig.property == 'eventType'}">
-            Typ rezerwacji
-            <i class="glyphicon"
-               ng-class="{
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Lista rezerwacji</h2>
+        <form class="form-inline">
+            <div class="form-group">
+                <label>Typ rezerwacji</label>
+                <input ng-model="filterPhrase.eventType" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Rodzaj pomieszczenia</label>
+                <input ng-model="filterPhrase.roomType" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Komentarz</label>
+                <input ng-model="filterPhrase.comment" type="text" class="form-control">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th class="clickable" ng-click="toggleSort('eventType')"
+                    ng-class="{'text-primary': sortConfig.property == 'eventType'}">
+                    Typ rezerwacji
+                    <i class="glyphicon"
+                       ng-class="{
                'glyphicon-arrow-up': sortConfig.property=='eventType' && sortConfig.sign=='+',
                'glyphicon-arrow-down': !(sortConfig.property=='eventType' && sortConfig.sign=='+')}"></i>
-        </th>
+                </th>
 
-        <th class="clickable" ng-click="toggleSort('roomType')"
-            ng-class="{'text-primary': sortConfig.property == 'roomType'}">
-            Rodzaj pomieszczenia
-            <i class="glyphicon"
-               ng-class="{
+                <th class="clickable" ng-click="toggleSort('roomType')"
+                    ng-class="{'text-primary': sortConfig.property == 'roomType'}">
+                    Rodzaj pomieszczenia
+                    <i class="glyphicon"
+                       ng-class="{
                'glyphicon-arrow-up': sortConfig.property=='roomType' && sortConfig.sign=='+',
                'glyphicon-arrow-down': !(sortConfig.property=='roomType' && sortConfig.sign=='+')}"></i>
-        </th>
+                </th>
 
-        <th class="clickable" ng-click="toggleSort('comment')"
-            ng-class="{'text-primary': sortConfig.property == 'comment'}">
-            Komentarz
-            <i class="glyphicon"
-               ng-class="{
+                <th class="clickable" ng-click="toggleSort('comment')"
+                    ng-class="{'text-primary': sortConfig.property == 'comment'}">
+                    Komentarz
+                    <i class="glyphicon"
+                       ng-class="{
                'glyphicon-arrow-up': sortConfig.property=='comment' && sortConfig.sign=='+',
                'glyphicon-arrow-down': !(sortConfig.property=='comment' && sortConfig.sign=='+')}"></i>
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="booking in bookings | orderBy:sortConfig.text ">
-        <td>{{booking.eventType}}</td>
-        <td>{{booking.roomType}}</td>
-        <td>{{booking.comment}}</td>
-    </tr>
-    </tbody>
-</table>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="booking in bookings | orderBy:sortConfig.text | filter:filterPhrase">
+                <td>{{booking.eventType}}</td>
+                <td>{{booking.roomType}}</td>
+                <td>{{booking.comment}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
