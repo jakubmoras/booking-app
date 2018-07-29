@@ -1,1 +1,23 @@
-<p>Witaj w aplikacji bookings-app</p>
+<div class="row">
+    <div class="col-xs-9">
+        <h2>Witaj na stronach rezerwowania imprez okolicznościowych</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class=" col-xs-9">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-xs-3 text-right">Podaj swój email</label>
+                <input ng-model="formData.userMail" type="text" placeholder="Wprowadź e-mail" name="uname" required>
+                <button class="InfoBTN" ng-click="showHint = !showHint"></button>
+            </div>
+            <div ng-show="showHint" class="panel panel-success">
+                <div class="panel-heading">e-mail możesz podać w każdej chwili w trakcie używania aplikacji</div>
+            </div>
+            <div class="col-xs-offset-2 col-xs-12">
+                <button ng-click="storeEmail()" class="btn btn-primary">Naciśnij żeby przejść do rezerwacji</button>
+            </div>
+        </form>
+    </div>
+</div>

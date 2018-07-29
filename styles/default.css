@@ -12,3 +12,15 @@
 .clickable {
     cursor: pointer;
 }
+#Info {
+    width: 15px;
+    height: 15px;
+    background-image: url("../../booking-app/info.jpg");
+    background-size: cover;
+}
+.InfoBTN {
+    width: 15px;
+    height: 15px;
+    background-image: url("../../booking-app/info.jpg");
+    background-size: cover;
+}

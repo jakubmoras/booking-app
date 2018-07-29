@@ -3,7 +3,8 @@ angular.module('bookingApp', ['ngRoute']);
 angular.module('bookingApp').config(['$routeProvider', function config($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'src/views/main.html'
+            templateUrl: 'src/views/main.html',
+            controller: mainPageController
         })
         .when('/add', {
             controller: createBookingController,
@@ -17,3 +18,4 @@ angular.module('bookingApp').config(['$routeProvider', function config($routePro
 }]);
 
 angular.module('bookingApp').service('bookingsStorageService', bookingsStorageService);
+angular.module('bookingApp').service('storeEmailService' , storeEmailService);
