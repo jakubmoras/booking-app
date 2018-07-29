@@ -4,9 +4,35 @@
 
 function createBookingController($scope, $timeout, bookingsStorageService) {
 
+    var eventDetailTypeMap = {
+        EVT_GENERAL_FIRM: [
+            {id: 0, label: 'Firm A'},
+            {id: 1, label: 'Firm B'}
+        ],
+        EVT_GENERAL_FAMILY: [
+            {id: 0, label: 'Family A'},
+            {id: 1, label: 'Family B'}
+        ],
+        EVT_GENERAL_OTHERS: [
+            {id: 0, label: 'Others A'},
+            {id: 1, label: 'Others B'}
+        ]
+    };
+
     $scope.bookingSuccessMessage = false;
 
-    $scope.formData = {}; // declare empty object
+    $scope.formData = {
+        eventGeneralType: 'EVT_GENERAL_FIRM'
+    };
+
+    $scope.eventDetailTypeOptions = [];
+
+    $scope.$watch('formData.eventGeneralType', function (newEventGeneralType) {
+        if (newEventGeneralType) {
+            $scope.eventDetailTypeOptions = eventDetailTypeMap[newEventGeneralType];
+            $scope.formData.eventDetailType = $scope.eventDetailTypeOptions[0];
+        }
+    }, true);
 
     $scope.submitForm = function () {
         var booking = angular.copy($scope.formData, {});
