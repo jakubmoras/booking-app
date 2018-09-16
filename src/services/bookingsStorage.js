@@ -8,6 +8,7 @@ function bookingsStorageService() {
         localStorage.setItem(LS_KEY, JSON.stringify(bookings));
     }
 
+    // @DEPRECATED
     function getBookings() {
         var bookings = localStorage.getItem(LS_KEY);
         if (bookings) {

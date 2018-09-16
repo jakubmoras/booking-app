@@ -1,14 +1,16 @@
-function listBookingsController($scope, bookingsStorageService) {
-
-    $scope.bookings = bookingsStorageService.getBookings();
-
-    $scope.filterPhrase;
+function listBookingsController($scope, dataApi) {
 
     $scope.sortConfig = {
         text: '',
         sign: '',
         property: ''
     };
+
+    function init() {
+        dataApi.getReservations().then(reservations => {
+            $scope.bookings = reservations;
+        });
+    }
 
     $scope.toggleSort = function (propertyName) {
         const currentSign = $scope.sortConfig.text.substr(0, 1);
@@ -21,4 +23,6 @@ function listBookingsController($scope, bookingsStorageService) {
         $scope.sortConfig.sign = sign;
         $scope.sortConfig.property = propertyName;
     };
+
+    init();
 }
