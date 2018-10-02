@@ -15,9 +15,9 @@
                 <label class="col-xs-3 text-right">Rodzaj imprezy</label>
                 <div class="col-xs-9">
                     <select ng-model="formData.eventGeneralType" class="form-control">
-                        <option value="EVT_GENERAL_FIRM">Impreza firmowa</option>
-                        <option value="EVT_GENERAL_FAMILY">Impreza rodzinna</option>
-                        <option value="EVT_GENERAL_OTHERS">Inne</option>
+                        <option value="FIRM">Impreza firmowa</option>
+                        <option value="FAMILY">Impreza rodzinna</option>
+                        <option value="OTHERS">Inne</option>
                     </select>
                 </div>
             </div>
@@ -34,11 +34,11 @@
                 <label class="col-xs-3 text-right">Wybór sali</label>
                 <div class="col-xs-9">
                     <label class="radio-inline">
-                        <input ng-model="formData.roomType" type="radio" name="room-type" value="room-general">
+                        <input ng-model="formData.roomType" type="radio" name="room-type" value="COMMON">
                         Miejsce w sali ogólnej
                     </label>
                     <label class="radio-inline">
-                        <input ng-model="formData.roomType" type="radio" name="room-type" value="room-separate">
+                        <input ng-model="formData.roomType" type="radio" name="room-type" value="SEPARATED">
                         Osobna sala
                     </label>
                 </div>

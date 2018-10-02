@@ -6,7 +6,12 @@ function dataApi($http) {
         return $http.get(apiBaseUrl + 'reservations').then(results => results.data);
     }
 
+    function saveReservation(data) {
+        return $http.post(apiBaseUrl + 'reservation', data);
+    }
+
     return {
-        getReservations
+        getReservations,
+        saveReservation
     }
 }

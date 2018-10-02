@@ -2,27 +2,27 @@
 // Scope's data used on View are called binding {{ }}
 // View <- scope -> Controller
 
-function createBookingController($scope, $timeout, bookingsStorageService) {
+function createBookingController($scope, $timeout, dataApi) {
 
     var eventDetailTypeMap = {
-        EVT_GENERAL_FIRM: [
-            {id: 0, label: 'Firm A'},
-            {id: 1, label: 'Firm B'}
+        FIRM: [
+            {id: 'FIRM_A', label: 'Firm A'},
+            {id: 'FIRM_B', label: 'Firm B'}
         ],
-        EVT_GENERAL_FAMILY: [
-            {id: 0, label: 'Family A'},
-            {id: 1, label: 'Family B'}
+        FAMILY: [
+            {id: 'FAMILY_A', label: 'Family A'},
+            {id: 'FAMILY_B', label: 'Family B'}
         ],
-        EVT_GENERAL_OTHERS: [
-            {id: 0, label: 'Others A'},
-            {id: 1, label: 'Others B'}
+        OTHERS: [
+            {id: 'OTHERS_A', label: 'Others A'},
+            {id: 'OTHERS_B', label: 'Others B'}
         ]
     };
 
     $scope.bookingSuccessMessage = false;
 
     $scope.formData = {
-        eventGeneralType: 'EVT_GENERAL_FIRM'
+        eventGeneralType: 'FIRM'
     };
 
     $scope.eventDetailTypeOptions = [];
@@ -36,11 +36,17 @@ function createBookingController($scope, $timeout, bookingsStorageService) {
 
     $scope.submitForm = function () {
         var booking = angular.copy($scope.formData, {});
-        bookingsStorageService.addBooking(booking);
-        $scope.formData = {};
-        $scope.bookingSuccessMessage = true;
-        $timeout(function () {
-            $scope.bookingSuccessMessage = false;
-        }, 3000);
+        booking.time = new Date();
+        booking.eventDetailType = booking.eventDetailType.id;
+        dataApi.saveReservation(booking).then(() => {
+            $scope.formData = {};
+            $scope.bookingSuccessMessage = true;
+            $timeout(function () {
+                $scope.bookingSuccessMessage = false;
+            }, 3000);
+        }).catch(e => {
+            console.error('Error on network communication');
+            console.error(e);
+        });
     }
 }
