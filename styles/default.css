@@ -1,3 +1,5 @@
+@import url(reset.css);
+
 #restaurant-photo-1 {
     width: 400px;
 }
@@ -23,4 +25,415 @@
     height: 15px;
     background-image: url("../../booking-app/info.jpg");
     background-size: cover;
+}
+.tableSettigsRound_base {
+    background-image: url("../../booking-app/Images/table_banquet.jpg");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    text-align: left;
+    caption-side: bottom;
+}
+.tableSettigsRound_changed {
+    background-image: url("../../booking-app/Images/table_round.png");
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    text-align: left;
+}
+.textStyle {
+    font-size:34px;
+    background-color: red;
+    color: #ff282a;
+
+}
+
+.buttonLabel {
+    font-size:9px;
+[red]/*margin-top:25px;*/[/red]
+}
+
+#MENU {
+    background: url('../images/home-bg.jpg') 50% 0 repeat-y fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.welcome-text {
+    background-color: rgba(67, 106, 188,0.7);
+
+}
+.welcome-text p {
+    font-family: 'Cormorant Garamond', serif;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    right: -500px;
+    text-align: center;
+}
+.welcome-text span{
+    font-family: 'Cormorant Garamond', serif;
+    display:inline-block;
+    padding: 10px;
+    font-size: 20px;
+   /* right: -500px;*/
+    margin-bottom: 10px;
+    text-align: center;
+}
+.steps {
+    font-family: 'Cormorant Garamond', serif;
+    display: inline-block;
+
+    padding: 5px;
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bolder ;
+}
+.radio-inline {
+    background-image: url(../images/reservation-only.png);
+    opacity: .2;
+    height: 200px;
+    width: 400px;
+    position: relative;
+}
+
+
+.radio-inline {
+    display:inline-block;
+    height: 50px;
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px ;
+    border-color: #ddd;
+    text-align: center;
+    color: #000000;
+    font-size: 30px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+input[type='radio']:after {
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    top: -4px;
+    left: -14px;
+    position: absolute;
+    background-color: #ffffff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid darkred;
+}
+input[type='radio']:checked:after {
+    width: 35px;
+    height: 35px;
+    border-radius: 25px;
+    top: -4px;
+    left: -14px;
+    position: absolute;
+    background-color: darkgreen;
+    content: '';
+  display: inline-block;
+    visibility: visible;
+    border: 2px solid darkred;
+
+
+}
+.noPerLabel {
+padding: 10px;
+    left: 0px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: darkblue;
+    border-bottom: #DEDEC9;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    text-align: left;
+}
+.noOfperson {
+    padding: 7px;
+    width: 200px;
+
+
+}
+.form-horizontal {
+    margin: 15px;
+}
+
+
+.accesoriess {
+    font-family: 'Cormorant Garamond', serif;
+}
+.reservation-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.accessories-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    text-align: left;
+
+
+}
+
+.boxForCheckingBckg {
+    background-image: url('../images/candle-table.jpeg');
+    ;
+    float: bottom;
+}
+.boxForCheckingBckg_candle {
+    background-image: url('../images/napkin.jpeg');
+    float: bottom;
+}
+
+.boxForCheckingBckg_candle_visit_cards {
+    background-image: url('../images/visit-card.jpeg');
+    float: bottom;
+}
+
+.boxForCheckingBckg_aperitif{
+    background-image: url('../images/aperitif.jpeg');
+
+}
+/*
+.accesories_1, .accessories_2, .accessories_3, .accessories_4{
+    background-color: #ff282a;
+    display: inline-block;
+    position:relative;
+    background-size: cover;
+    width: 100px;
+    height: 67px;
+    float: bottom;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.accesoriess p {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    position: absolute;
+    top: 20px;
+    left: 130px;
+}*/
+/*.accessories_2 {
+    background-color: #ff282a;
+    display: inline-block;
+    width: 100px;
+    height: 67px;
+    background-image: url('../images/napkin.jpeg');
+    background-size: cover;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+} */
+
+.boxForChecking
+{
+    width: 100px;
+    height: 67px;
+    left: 70px;
+    position: relative;
+    background-color: #ffffff;
+    display: inline-block;
+    visibility: visible;
+    border: 10px;
+    border-color: #ff282a;
+    float: left;
+    z-index: 1;
+}
+.boxForChecking input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.boxForCheckingBckg , .boxForCheckingBckg_candle, .boxForCheckingBckg_candle_visit_cards,.boxForCheckingBckg_aperitif{
+    background-color: #ff282a;
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    height: 67px;
+
+ /*   background-image: url("../images/napkin.jpeg"); */
+    background-size: cover;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-size: 0px;
+    color: #ff282a;
+    left: 0px;
+
+}
+
+.boxForCheckingBckg:before, .boxForCheckingBckg_candle:before, .boxForCheckingBckg_candle_visit_cards:before, .boxForCheckingBckg_aperitif:before{
+    position: absolute;
+    content:"";
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    left: 10px;
+    background-image: url("../images/iconmonstr-check-mark-3.svg");
+    background-size: cover;
+    display: none;
+}
+
+input:checked+ .boxForCheckingBckg:before, input:checked+  .boxForCheckingBckg_candle:before,  input:checked+ .boxForCheckingBckg_candle_visit_cards:before,input:checked+ .boxForCheckingBckg_aperitif:before{
+    position: absolute;
+    content:"";
+    width: 50px;
+    height: 50px;
+    background-image: url("../images/iconmonstr-check-mark-3.svg");
+    background-size: cover;
+    display: inline-block;
+    top: 10px;
+}
+
+/* input:checked+ .accesories_1:before{
+    position: absolute;
+    content:"";
+    width: 50px;
+    height: 50px;
+    left: -150px;
+    background-image: url("../images/iconmonstr-check-mark-3.svg");
+    background-size: cover;
+} */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 36px;
+  /*  background-color: #3c763d;*/
+    border-style: solid;
+    border-color: #fff;
+    border-radius:10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-width: 1px;
+
+    border-style: solid;
+    border-color: #ff282a;
+    border-radius:10px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "Nie";
+    text-align: center;
+    padding: 3px;
+    font-size: 13px;
+    height: 26px;
+    width: 33px;
+    left: 4px;
+    bottom: 4px;
+       border-width: 1px;
+      border-radius: 15px;
+      border-color: red;
+      border-style: solid;
+ /*   background-color: darkred; */
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+/*input:checked + .slider {
+    background-color: blue;
+}*/
+input:checked + .slider {
+    border-width: 1px;
+    border-style: solid;
+    border-color: green;
+    border-radius:10px;
+
+}
+input:checked + .slider:before {
+    background-color: #FFFFFF;
+    position: absolute;
+    content: "Tak";
+    height: 26px;
+    width: 33px;
+    left: 4px;
+    bottom: 4px;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: green;
+    border-style: solid;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(126px);
+    transform: translateX(26px);
+}
+.cb2 {
+    display: inline-block;
+    font-family: 'Shrikhand',cursive;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 20px;
+    text-decoration: underline  ;
+
+}
+.cb2 {
+   cursor: pointer;
+
+}
+.cb2:active {
+    font-size: 40px;
+}
+.selectMenu {
+left:-5px;
+}
+.selectedMenu {
+    padding-left: -5px;
+}
+.selectedMenu, .selectMenu {
+
+    margin-top: 80px;
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: white;
+    border-style: solid;
+
 }

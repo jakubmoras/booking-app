@@ -1,23 +1,75 @@
-<div class="row">
-    <div class="col-xs-9">
-        <h2>Witaj na stronach rezerwowania imprez okolicznościowych</h2>
+<div class="container" style=" background-color: lightgray">
+
+    <div class="welcome-text">
+        <p>Witaj na stronach rezerwacji stolików i imprez naszej restauracji </p>
+        <span>Tutaj możesz zarówno zarezerwować stolik na obiad, kolację w rodzinnym gronie, ale i
+    zorganizować imprezę rodzinną lub firmową </span>
+        <span>W kilku prostych krokach powiedz nam czego potrzebujesz a my zorganizujemy Ci niezapomniany czas który będziesz długo wspominał</span>
     </div>
+
+    <div class="steps">
+        <p>Krok 1 wybierz jaką imprezę chciałbyś zorganizować</p>
+    </div>
+
+
+    <!--<section id="MENU"> -->
+
+    <div class="row col-xs-12">
+
+            <label class="radio-inline col-xs-6">
+                <input type="radio" class="reservationType" ng-model="reservationType" name="reservationType" ng-value="1"> Tylko
+                rezerwacja stolika(ów)
+            </label>
+
+
+        <label class="radio-inline col-xs-6" >
+            <input type="radio" class="reservationType" ng-model="reservationType" name="reservationType" ng-value="2">
+            Rezerwacja z cateringiem
+        </label>
+
+
+    </div>
+    <br> </br
+</div>
+<div class="steps row col-xs-12">
+    <span> Krok 2  Naciśnij "Dalej", system przekieruje cie do wybranej rezerwacji</span>
+    <br>
+    <br>
+    <div class="row col-xs-12 col-xs-offset-5">
+        <input type="button" class="btn btn-primary" value="Dalej" ng-click="checkValue()">
+    </div>
+    <br>
+</div>
+<!-- </div>
+<div class="row col-xs-12">
+    <form class="form-horizontal">
+        <div class="form-group ">
+            <label class="col-xs-6" style="text-align: center ">Podaj swój email</label>
+            <input ng-model="formData.userMail" type="text" placeholder="Wprowadź e-mail" name="uname"
+                   required>
+            <button class="InfoBTN" ng-click="showHint = !showHint"></button>
+        </div>
+        <div ng-show="showHint" class="panel panel-success">
+            <div class="panel-heading">e-mail możesz podać w każdej chwili w trakcie używania aplikacji
+            </div>
+        </div>
+        <div class="col-xs-offset-6 ">
+            <button ng-click="storeEmail()" class="btn btn-primary">Naciśnij żeby przejść do rezerwacji
+            </button>
+        </div>
+    </form>
+</div>
+</div>
+</div>-->
+<!--</section> -->
+
+
 </div>
 
-<div class="row">
-    <div class=" col-xs-9">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="col-xs-3 text-right">Podaj swój email</label>
-                <input ng-model="formData.userMail" type="text" placeholder="Wprowadź e-mail" name="uname" required>
-                <button class="InfoBTN" ng-click="showHint = !showHint"></button>
-            </div>
-            <div ng-show="showHint" class="panel panel-success">
-                <div class="panel-heading">e-mail możesz podać w każdej chwili w trakcie używania aplikacji</div>
-            </div>
-            <div class="col-xs-offset-2 col-xs-12">
-                <button ng-click="storeEmail()" class="btn btn-primary">Naciśnij żeby przejść do rezerwacji</button>
-            </div>
-        </form>
-    </div>
-</div>
+
+
+
+
+
+
+

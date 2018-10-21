@@ -49,14 +49,41 @@
                     <input ng-model="formData.comment" class="form-control" type="text">
                 </div>
             </div>
+
+            <row class="row">
+
+                <label class="col-xs-3 text-center">Wybór ustawienia stołów</label>
+                <div class="col-xs-2 text-center">
+                    <button ng-class="{'tableSettigsRound_base' : layoutSelection[1], 'tableSettigsRound_changed' : !layoutSelection[1] }"
+                            ng-click="toggleButton(1)">
+                    </button>
+                    <p style="color:blue;font-size: 10px ">Ustawienie bankietowe </p>
+                </div>
+
+                <div class="col-xs-2 text-center">
+                    <button ng-class="{'tableSettigsRound_changed ' : layoutSelection[2], 'tableSettigsRound_base' : !layoutSelection[2]}"
+                            ng-click="toggleButton(2)">
+                    </button>
+                    <p style="color:blue;font-size: 10px ">Stoły okrągłe </p>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <button ng-class="{'tableSettigsRound_base' : ! layoutSelection[3], 'tableSettigsRound_changed' : !layoutSelection[3]}"
+                            ng-click="toggleButton(3)">
+                    </button>
+                    <p style="color:blue;font-size: 10px ">"Podkowa" </p>
+                </div>
+            </row>
+
             <div class="form-group">
                 <div class="col-xs-offset-3 col-xs-9">
                     <button ng-click="submitForm()" class="btn btn-primary">Zapisz</button>
                 </div>
             </div>
-        </form>
-    </div>
-    <div class="col-xs-12 col-sm-6"></div>
+    </form>
+</div>
+<div class="col-xs-12 col-sm-6">
+    <img id="restaurant-photo-1" src="https://www.wien.info/media/images/41993-das-loft-sofitel-19to1.jpeg">
+</div>
 </div>
 
 <div class="row">

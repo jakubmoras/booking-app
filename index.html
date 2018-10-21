@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Booking application</title>
+    <link rel="stylesheet" href="styles/default.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
-    <link rel="stylesheet" href="styles/default.css"/>
-
+    <link rel="stylesheet" href="bower_components/bootstrap-toggle/css/bootstrap-toggle.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="src/controllers/createBooking.js"></script>
     <script src="src/controllers/listBookings.js"></script>
     <script src="src/controllers/mainPage.js"></script>
+    <script src="src/controllers/tableReservations.js"></script>
     <script src="src/services/bookingsStorage.js"></script>
     <script src="src/services/storeEmail.js"></script>
     <script src="src/services/dataApi.js"></script>
@@ -23,10 +29,11 @@
 
 <nav class="navbar navbar-inverse">
     <div class="container">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right">
             <li><a ng-href="#!/main">Start</a></li>
             <li><a ng-href="#!/add">Dodaj rezerwację</a></li>
             <li><a ng-href="#!/list">Rezerwacje</a></li>
+            <li><a ng-href="#!/tablereservation">Rezerwacja stolików</a></li>
         </ul>
     </div>
 </nav>
