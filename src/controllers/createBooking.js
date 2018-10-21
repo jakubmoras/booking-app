@@ -33,7 +33,6 @@ function createBookingController($scope, $timeout, dataApi) {
             $scope.formData.eventDetailType = $scope.eventDetailTypeOptions[0];
         }
     }, true);
-
     $scope.submitForm = function () {
         var booking = angular.copy($scope.formData, {});
         booking.time = new Date();
@@ -48,5 +47,9 @@ function createBookingController($scope, $timeout, dataApi) {
             console.error('Error on network communication');
             console.error(e);
         });
+    }
+    $scope.layoutSelection = {a:1};
+    $scope.toggleButton = function (option) {
+        $scope.layoutSelection[option] = !$scope.layoutSelection[option];
     }
 }

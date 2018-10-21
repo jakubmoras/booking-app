@@ -1,4 +1,4 @@
-angular.module('bookingApp', ['ngRoute']);
+angular.module('bookingApp',['ngRoute','ui.bootstrap' ]);
 
 angular.module('bookingApp').config(['$routeProvider', function config($routeProvider) {
     $routeProvider
@@ -14,6 +14,11 @@ angular.module('bookingApp').config(['$routeProvider', function config($routePro
             controller: listBookingsController,
             templateUrl: 'src/views/list.html'
         })
+        .when('/tablereservation', {
+            controller:  tableReservationsControler,
+            templateUrl: 'src/views/tablereservation.html'
+        })
+
         .otherwise('/');
 }]);
 

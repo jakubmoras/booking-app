@@ -7,5 +7,15 @@ function mainPageController($scope, $location, storeEmailService) {
         storeEmailService.addMail(usermail);
         $scope.formData.userMail = "";
         $location.path('/add');
-    }
-}
+    };
+
+    $scope.checkValue = function () {
+        var reservation = $scope.reservationType;
+        if (reservation == "1") {
+            $location.path('/add');
+        }
+        else {
+            // todo dorobić kolejne przejście do okna rezerwacji z cateringiem
+        }
+    };
+};
