@@ -15,13 +15,10 @@ angular.module('bookingApp').config(['$routeProvider', function config($routePro
             templateUrl: 'src/views/list.html'
         })
         .when('/tablereservation', {
-            controller:  tableReservationsControler,
+            controller:  tableReservationsController,
             templateUrl: 'src/views/tablereservation.html'
         })
 
         .otherwise('/');
 }]);
 
-angular.module('bookingApp').service('bookingsStorageService', bookingsStorageService);
-angular.module('bookingApp').service('storeEmailService' , storeEmailService);
-angular.module('bookingApp').service('dataApi' , dataApi);

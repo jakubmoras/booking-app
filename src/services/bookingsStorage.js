@@ -23,3 +23,5 @@ function bookingsStorageService() {
         getBookings: getBookings
     }
 }
+
+angular.module('bookingApp').service('bookingsStorageService', bookingsStorageService);

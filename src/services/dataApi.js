@@ -15,3 +15,5 @@ function dataApi($http) {
         saveReservation
     }
 }
+
+angular.module('bookingApp').service('dataApi' , dataApi);

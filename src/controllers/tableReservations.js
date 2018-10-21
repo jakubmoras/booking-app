@@ -1,4 +1,17 @@
-function tableReservationsControler($scope, $window) {
+'use strict';
+
+angular.module('bookingApp').controller('dishModalController', function ($uibModalInstance) {
+
+    this.ok = function () {
+        $uibModalInstance.close();
+    };
+
+    this.cancel = function () {
+        $uibModalInstance.dismiss();
+    };
+});
+
+function tableReservationsController($scope, $window, $uibModal) {
     $scope.dishes = [
         {
             'name': 'Krewetki królewskie',
@@ -17,7 +30,11 @@ function tableReservationsControler($scope, $window) {
     $scope.selectedDishes = [];
 
     $scope.addRow = function (name) {
-
+        $uibModal.open({
+            templateUrl: 'src/views/dishModal.tpl.html',
+            controller: 'dishModalController as ctrl'
+            // windowTopClass: 'dish-modal-window'
+        });
         const found = _.find($scope.selectedDishes, dish => dish.name == name);
         if (!found) {
             $scope.selectedDishes.push({'name': name})

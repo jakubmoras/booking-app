@@ -14,3 +14,5 @@ function storeEmailService() {
         getMail: getMail
     }
 }
+
+angular.module('bookingApp').service('storeEmailService', storeEmailService);
