@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('bookingApp').controller('dishModalController', function ($uibModalInstance) {
+angular.module('bookingApp').controller('dishModalController', function ($uibModalInstance, dish) {
+
+    this.dish = dish;
 
     this.ok = function () {
         $uibModalInstance.close();
@@ -29,11 +31,15 @@ function tableReservationsController($scope, $window, $uibModal) {
     ];
     $scope.selectedDishes = [];
 
-    $scope.addRow = function (name) {
+    $scope.addRow = function (dish) {
         $uibModal.open({
             templateUrl: 'src/views/dishModal.tpl.html',
-            controller: 'dishModalController as ctrl'
-            // windowTopClass: 'dish-modal-window'
+            controller: 'dishModalController',
+            controllerAs: 'ctrl',
+            windowTopClass: 'dialog-dish-modal',
+            resolve: {
+                dish: _.pick(dish, ['name', 'description'])
+            }
         });
         const found = _.find($scope.selectedDishes, dish => dish.name == name);
         if (!found) {

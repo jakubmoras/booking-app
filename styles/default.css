@@ -437,3 +437,7 @@ left:-5px;
     border-style: solid;
 
 }
+
+.dialog-dish-modal .modal-body{
+    background: lightgrey;
+}
