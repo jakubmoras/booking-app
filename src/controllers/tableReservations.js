@@ -1,8 +1,13 @@
 'use strict';
 
-angular.module('bookingApp').controller('dishModalController', function ($uibModalInstance, dish) {
-
+angular.module('bookingApp').controller('dishModalController', function ($uibModalInstance, dish, booking) {
+    const ctrl = this;
     this.dish = dish;
+    this.booking = booking
+
+    this.calculatePrice = function (noOfportion) {
+        ctrl.calculatedPrice = noOfportion * ctrl.booking.noOfperson;
+    };
 
     this.ok = function () {
         $uibModalInstance.close();
@@ -32,22 +37,27 @@ function tableReservationsController($scope, $window, $uibModal) {
     $scope.selectedDishes = [];
 
     $scope.addRow = function (dish) {
+
+        var booking = angular.copy($scope.formData, {});
+
         $uibModal.open({
             templateUrl: 'src/views/dishModal.tpl.html',
             controller: 'dishModalController',
             controllerAs: 'ctrl',
             windowTopClass: 'dialog-dish-modal',
             resolve: {
-                dish: _.pick(dish, ['name', 'description'])
+                dish: _.pick(dish, ['name', 'description']),
+                booking: _.pick(booking, ['noOfperson'])
             }
         });
-        const found = _.find($scope.selectedDishes, dish => dish.name == name);
-        if (!found) {
-            $scope.selectedDishes.push({'name': name})
-        }
-        else {
-            $window.alert('Danie zostało już dodane')
-        }
+        /*      const found = _.find($scope.selectedDishes, dish => dish.name == name);
+             if (!found) {
+                 $scope.selectedDishes.push({'name': dish.name})
+                 console.log('aaa')
+             }
+             else {
+                 $window.alert('Danie zostało już dodane')
+             }*/
     }
 };
 

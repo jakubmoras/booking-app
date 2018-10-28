@@ -1,9 +1,29 @@
 <div class="modal-header">
-    <h3 class="modal-title">Title</h3>
+    <h3 class="modal-title">Dodaj opcje</h3>
 </div>
 <div class="modal-body" id="modal-body">
     <p>{{ctrl.dish.name}}</p>
     <pre>{{ctrl.dish | json}}</pre>
+    <pre>{{ctrl.booking | json}}</pre>
+    <div class="row">
+        <div class="col-xs-12 radio-inline">
+            <label class="col-xs-6 ">
+                <input type="radio" class="selectOptionRadio" ng-model="selectOptionRadio" name="selecForAll"
+                       ng-value="1">
+                Jedna porcja na osobę
+            </label>
+            <label class="col-xs-6 ">
+                <input type="radio" class="selectOptionRadio" ng-model="selectOptionRadio" name="selectPortion"
+                       ng-value="2">
+                Wspólny półmisek
+            </label>
+        </div>
+        <label class="col-xs-8" >podaj ilośc porcji
+            <input type="text" class="noOfPortion" ng-model="noOfportion"
+                   ng-change="ctrl.calculatePrice(noOfportion)"  name="noOfportion">
+        </label>
+        <p>do zapłaty {{ctrl.calculatedPrice}}</p>
+    </div>
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>
