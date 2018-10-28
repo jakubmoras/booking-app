@@ -1,16 +1,17 @@
-function mainPageController($scope, $location, storeEmailService) {
+function mainPageController($scope, $location) {
 
     $scope.formData = {};
 
     $scope.storeEmail = function () {
-        var usermail = $scope.formData.userMail;
-        storeEmailService.addMail(usermail);
+        const userMail = $scope.formData.userMail;
+        // TODO handle email saving
+        console.log('handle email saving');
         $scope.formData.userMail = "";
         $location.path('/add');
     };
 
     $scope.checkValue = function () {
-        var reservation = $scope.reservationType;
+        const reservation = $scope.reservationType;
         if (reservation == "1") {
             $location.path('/add');
         }

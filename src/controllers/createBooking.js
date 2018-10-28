@@ -4,7 +4,7 @@
 
 function createBookingController($scope, $timeout, dataApi) {
 
-    var eventDetailTypeMap = {
+    const eventDetailTypeMap = {
         FIRM: [
             {id: 'FIRM_A', label: 'Firm A'},
             {id: 'FIRM_B', label: 'Firm B'}
@@ -33,8 +33,9 @@ function createBookingController($scope, $timeout, dataApi) {
             $scope.formData.eventDetailType = $scope.eventDetailTypeOptions[0];
         }
     }, true);
+
     $scope.submitForm = function () {
-        var booking = angular.copy($scope.formData, {});
+        const booking = angular.copy($scope.formData, {});
         booking.time = new Date();
         booking.eventDetailType = booking.eventDetailType.id;
         dataApi.saveReservation(booking).then(() => {
@@ -47,8 +48,10 @@ function createBookingController($scope, $timeout, dataApi) {
             console.error('Error on network communication');
             console.error(e);
         });
-    }
-    $scope.layoutSelection = {a:1};
+    };
+
+    $scope.layoutSelection = {};
+
     $scope.toggleButton = function (option) {
         $scope.layoutSelection[option] = !$scope.layoutSelection[option];
     }

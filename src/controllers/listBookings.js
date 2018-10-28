@@ -1,3 +1,5 @@
+'use strict';
+
 function listBookingsController($scope, dataApi) {
 
     $scope.sortConfig = {
@@ -15,7 +17,7 @@ function listBookingsController($scope, dataApi) {
     $scope.toggleSort = function (propertyName) {
         const currentSign = $scope.sortConfig.text.substr(0, 1);
         const currentSortProperty = $scope.sortConfig.text.substr(1, $scope.sortConfig.text.length);
-        var sign = '+';
+        let sign = '+';
         if (propertyName == currentSortProperty && currentSign == '+') {
             sign = '-';
         }

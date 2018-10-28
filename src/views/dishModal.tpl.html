@@ -18,11 +18,11 @@
                 Wspólny półmisek
             </label>
         </div>
-        <label class="col-xs-8" >podaj ilośc porcji
-            <input type="text" class="noOfPortion" ng-model="noOfportion"
-                   ng-change="ctrl.calculatePrice(noOfportion)"  name="noOfportion">
+        <label class="col-xs-8">podaj ilośc porcji
+            <input type="text" class="portionsCount" ng-model="portionsCount"
+                   ng-change="ctrl.calculatePrice(portionsCount)">
         </label>
-        <p>do zapłaty {{ctrl.calculatedPrice}}</p>
+        <p>do zapłaty {{ctrl.dish.calculatedPrice}}</p>
     </div>
 </div>
 <div class="modal-footer">

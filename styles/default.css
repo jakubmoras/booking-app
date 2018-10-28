@@ -1,5 +1,3 @@
-@import url(reset.css);
-
 #restaurant-photo-1 {
     width: 400px;
 }
@@ -14,18 +12,21 @@
 .clickable {
     cursor: pointer;
 }
+
 #Info {
     width: 15px;
     height: 15px;
     background-image: url("../../booking-app/info.jpg");
     background-size: cover;
 }
+
 .InfoBTN {
     width: 15px;
     height: 15px;
     background-image: url("../../booking-app/info.jpg");
     background-size: cover;
 }
+
 .tableSettigsRound_base {
     background-image: url("../../booking-app/Images/table_banquet.jpg");
     width: 50px;
@@ -34,6 +35,7 @@
     text-align: left;
     caption-side: bottom;
 }
+
 .tableSettigsRound_changed {
     background-image: url("../../booking-app/Images/table_round.png");
     width: 50px;
@@ -41,16 +43,15 @@
     background-size: cover;
     text-align: left;
 }
+
 .textStyle {
-    font-size:34px;
+    font-size: 34px;
     background-color: red;
     color: #ff282a;
-
 }
 
 .buttonLabel {
-    font-size:9px;
-[red]/*margin-top:25px;*/[/red]
+    font-size: 9px;
 }
 
 #MENU {
@@ -72,9 +73,10 @@
 }
 
 .welcome-text {
-    background-color: rgba(67, 106, 188,0.7);
+    background-color: rgba(67, 106, 188, 0.7);
 
 }
+
 .welcome-text p {
     font-family: 'Cormorant Garamond', serif;
     padding: 20px;
@@ -83,15 +85,17 @@
     right: -500px;
     text-align: center;
 }
-.welcome-text span{
+
+.welcome-text span {
     font-family: 'Cormorant Garamond', serif;
-    display:inline-block;
+    display: inline-block;
     padding: 10px;
     font-size: 20px;
-   /* right: -500px;*/
+    /* right: -500px;*/
     margin-bottom: 10px;
     text-align: center;
 }
+
 .steps {
     font-family: 'Cormorant Garamond', serif;
     display: inline-block;
@@ -99,11 +103,11 @@
     padding: 5px;
     margin: 20px;
     font-size: 30px;
-    font-weight: bolder ;
+    font-weight: bolder;
 }
 
 .noPerLabel {
-padding: 10px;
+    padding: 10px;
     left: 0px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
@@ -113,20 +117,20 @@ padding: 10px;
     border-bottom-width: 1px;
     text-align: left;
 }
+
 .noOfperson {
     padding: 7px;
     width: 200px;
-
-
 }
+
 .form-horizontal {
     margin: 15px;
 }
 
-
 .accesoriess {
     font-family: 'Cormorant Garamond', serif;
 }
+
 .reservation-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
@@ -135,6 +139,7 @@ padding: 10px;
     margin-bottom: 20px;
     text-align: left;
 }
+
 .accessories-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
@@ -142,24 +147,25 @@ padding: 10px;
     margin-top: 5px;
     margin-bottom: 50px;
     text-align: left;
-
-
 }
 
 .boxForCheckingBckg {
     background-image: url('../images/candle-table.jpeg');
 }
+
 .boxForCheckingBckg_candle {
     background-image: url('../images/napkin.jpeg');
 }
+
 .boxForCheckingBckg_candle_visit_cards {
     background-image: url('../images/visit-card.jpeg');
 }
-.boxForCheckingBckg_aperitif{
+
+.boxForCheckingBckg_aperitif {
     background-image: url('../images/aperitif.jpeg');
 }
-.boxForChecking
-{
+
+.boxForChecking {
     width: 100px;
     height: 67px;
     left: 70px;
@@ -169,33 +175,32 @@ padding: 10px;
     visibility: visible;
     border: 10px;
     border-color: #ff282a;
-
     z-index: 1;
 }
+
 .boxForChecking input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.boxForCheckingBckg , .boxForCheckingBckg_candle, .boxForCheckingBckg_candle_visit_cards,.boxForCheckingBckg_aperitif{
+.boxForCheckingBckg, .boxForCheckingBckg_candle, .boxForCheckingBckg_candle_visit_cards, .boxForCheckingBckg_aperitif {
     background-color: #ff282a;
     display: inline-block;
     position: absolute;
     width: 100px;
     height: 67px;
     background-size: cover;
-/*    margin-bottom: 5px;
-    margin-right: 5px; */
+    /*    margin-bottom: 5px;
+        margin-right: 5px; */
     font-size: 0px;
     color: #ff282a;
     left: 0px;
-
 }
 
-.boxForCheckingBckg:before, .boxForCheckingBckg_candle:before, .boxForCheckingBckg_candle_visit_cards:before, .boxForCheckingBckg_aperitif:before{
+.boxForCheckingBckg:before, .boxForCheckingBckg_candle:before, .boxForCheckingBckg_candle_visit_cards:before, .boxForCheckingBckg_aperitif:before {
     position: absolute;
-    content:"";
+    content: "";
     width: 50px;
     height: 50px;
     top: 30px;
@@ -205,9 +210,9 @@ padding: 10px;
     display: none;
 }
 
-input:checked+ .boxForCheckingBckg:before, input:checked+  .boxForCheckingBckg_candle:before,  input:checked+ .boxForCheckingBckg_candle_visit_cards:before,input:checked+ .boxForCheckingBckg_aperitif:before{
+input:checked + .boxForCheckingBckg:before, input:checked + .boxForCheckingBckg_candle:before, input:checked + .boxForCheckingBckg_candle_visit_cards:before, input:checked + .boxForCheckingBckg_aperitif:before {
     position: absolute;
-    content:"";
+    content: "";
     width: 50px;
     height: 50px;
     background-image: url("../images/iconmonstr-check-mark-3.svg");
@@ -216,16 +221,15 @@ input:checked+ .boxForCheckingBckg:before, input:checked+  .boxForCheckingBckg_c
     top: 10px;
 }
 
-
 .switch {
     position: relative;
     display: inline-block;
     width: 70px;
     height: 36px;
-  /*  background-color: #3c763d;*/
+    /*  background-color: #3c763d;*/
     border-style: solid;
     border-color: #fff;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 .switch input {
@@ -233,7 +237,6 @@ input:checked+ .boxForCheckingBckg:before, input:checked+  .boxForCheckingBckg_c
     width: 0;
     height: 0;
 }
-
 
 .slider {
     position: absolute;
@@ -243,10 +246,9 @@ input:checked+ .boxForCheckingBckg:before, input:checked+  .boxForCheckingBckg_c
     right: 0;
     bottom: 0;
     border-width: 1px;
-
     border-style: solid;
     border-color: #ff282a;
-    border-radius:10px;
+    border-radius: 10px;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -261,23 +263,22 @@ input:checked+ .boxForCheckingBckg:before, input:checked+  .boxForCheckingBckg_c
     width: 33px;
     left: 4px;
     bottom: 4px;
-       border-width: 1px;
-      border-radius: 15px;
-      border-color: red;
-      border-style: solid;
- /*   background-color: darkred; */
+    border-width: 1px;
+    border-radius: 15px;
+    border-color: red;
+    border-style: solid;
+    /*   background-color: darkred; */
     -webkit-transition: .4s;
     transition: .4s;
 }
-
 
 input:checked + .slider {
     border-width: 1px;
     border-style: solid;
     border-color: green;
-    border-radius:10px;
-
+    border-radius: 10px;
 }
+
 input:checked + .slider:before {
     background-color: #FFFFFF;
     position: absolute;
@@ -303,34 +304,33 @@ input:checked + .slider:before {
     -ms-transform: translateX(126px);
     transform: translateX(26px);
 }
+
 .cb2 {
     display: inline-block;
-    font-family: 'Shrikhand',cursive;
+    font-family: 'Shrikhand', cursive;
     font-size: 16px;
     text-align: left;
     margin-bottom: 20px;
-    text-decoration: underline  ;
-
+    text-decoration: underline;
 }
+
 .cb2 {
-   cursor: pointer;
-
+    cursor: pointer;
 }
+
 .cb2:active {
     font-size: 40px;
 }
 
-
-.dialog-dish-modal .modal-body{
+.dialog-dish-modal .modal-body {
     background: lightgrey;
 }
-.nav-link .ng-binding{
+
+.nav-link .ng-binding {
     background-color: transparent;
 }
 
 .modal-dialog {
     position: relative;
     top: 50%;
-
-
 }

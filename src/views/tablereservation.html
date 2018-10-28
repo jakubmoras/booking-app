@@ -21,7 +21,7 @@
                     <label class="noPerLabel col-xs-3 ">Prosze podaj liczbę
                         gości </label>
                     <div class="noOfperson col-xs-3">
-                        <input ng-model="formData.noOfperson" class="form-control " type="number">
+                        <input ng-model="formData.personsCount" class="form-control " type="number">
                     </div>
                 </div>
             </div>
@@ -142,19 +142,26 @@
             </uib-tabset>
         </div>
         <div class="col-xs-4 ">
-            <p style="font-family: 'Cormorant Garamond', cursive;
-                       font-weight: bold; font-size: 25px; color: black; padding-top: 12px">
-                Wybrane menu </p>
-            <table class="table table-bordered">
+            <h3>Wybrane menu </h3>
+            <p ng-if="!selectedDishes && selectedDishes.length">Nie wybrano żadnych dań</p>
+            <table ng-if="selectedDishes && selectedDishes.length" class="table table-bordered">
+                <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Description</th>
+                    <th>Calculated price</th>
                 </tr>
-                <tr ng-repeat="selectedDish in selectedDishes">
-                    <td>{{selectedDish.name}}</td>
+                </thead>
+                <tbody>
+                <tr ng-repeat="dish in selectedDishes">
+                    <td>{{dish.name}}</td>
+                    <td>{{dish.description}}</td>
+                    <td>{{dish.calculatedPrice}}</td>
                 </tr>
+                </tbody>
             </table>
         </div>
     </div>
- <!-- kończe akapit menu -->
+    <!-- kończe akapit menu -->
 </div> <!-- kończe formularza wprowadzania danych rezerwacji -->
 
