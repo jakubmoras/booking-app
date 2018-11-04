@@ -1,13 +1,21 @@
 'use strict';
 
-function tableReservationsController($scope, $window, $uibModal, dataApi,) {
+function tableReservationsController($scope, $window, $uibModal, dataApi) {
 
     const menu = {};
     var circles = [];
+
     $scope.formData = {
         personsCount: 0
     };
     $scope.personLabels = [];
+
+    $scope.selectedDishes = [];
+
+    $scope.menuTabs = [
+        {id: 1, name: 'Przystawki'},
+        {id: 2, name: 'Dania główne'},
+        {id: 3, name: 'Napoje'}];
 
     function init() {
         dataApi.getMenu().then(menu => {
@@ -56,6 +64,7 @@ function tableReservationsController($scope, $window, $uibModal, dataApi,) {
             ctx.strokeRect(23, 40, x - 15, 40);
         }
     };
+
     $scope.personLabelTable = function () {
         let personCountChange = $scope.formData.personsCount - $scope.personLabels.length;
         if (personCountChange > 0) {
@@ -69,7 +78,7 @@ function tableReservationsController($scope, $window, $uibModal, dataApi,) {
             $scope.personLabels.splice($scope.personLabels.length - Math.abs(personCountChange), Math.abs(personCountChange))
 
         }
-    }
+    };
 
     function isIntersect(point, circle) {
         return Math.sqrt((point.x - circle.x1) ** 2 + (point.y - circle.y1) ** 2) < circle.radius;
@@ -87,9 +96,6 @@ function tableReservationsController($scope, $window, $uibModal, dataApi,) {
             }
         });
     });
-
-
-    $scope.selectedDishes = [];
 
     $scope.addRow = function (menu) {
         const booking = angular.copy($scope.formData, {});
@@ -117,6 +123,8 @@ function tableReservationsController($scope, $window, $uibModal, dataApi,) {
             }
         });
     };
+
+
     /*      const found = _.find($scope.selectedDishes, dish => dish.name == name);
          if (!found) {
              $scope.selectedDishes.push({'name': dish.name})

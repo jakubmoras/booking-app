@@ -110,21 +110,23 @@
        </div> -->
 
     <div ng-show="formdata.accesories_3">
-
         <div class="row">
-
             <p class="accessories-title">Wybrałeś opcję wizytówek podaj treść wizytówki dla poszczególnych osób</p>
             <div class="col-xs-4">
                 <canvas width="400" height="120" id="canvas" style="position: relative; top:-30px"></canvas>
                 <!--      <canvas width="300" height="200" id="canvasCircle" style="position: absolute;left: 300px"></canvas> -->
             </div>
-            <div class="columns">
+            <div class="col-xs-8">
                 <div ng-repeat="personLabels in personLabels ">
                     {{personLabels.zmienna}}
                     <input type="text"/>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div ng-show="!formdata.accesories_3">
+        <p>Drugi przypadek wizytówek</p>
     </div>
 
 
@@ -151,43 +153,15 @@
     <!-- kończe kontrolowanie sekcji menu -->
     <!-- Zaczynam akapit menu -->
     <!-- nowy tab start -->
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-xs-8">
-            <uib-tabset active="active">
-                <uib-tab index="0" heading="Przystawki" style="font-family: 'Cormorant Garamond', cursive;
-                        font-weight: bold; font-size: 25px; color: black">
-                    <div ng-repeat="menu in menu | filter: {Category_Id: 1 }">
-                        <div class="text-center">
-                        <div class="dishName"> {{menu.Dish_Name}}</div>
-                        <div class="dishDescription" >{{menu.Dish_Description}}</div>
-                        <input class=" select btn btn-secondary btn-sm" type="button" ng-click="addRow(menu)"
-                               value="Dodaj" >
+            <uib-tabset id="main-menu">
+                <uib-tab index="category.id" heading="{{category.name}}" ng-repeat="category in menuTabs">
+                    <div ng-repeat="item in menu | filter: {Category_Id: category.id }" class="text-center">
+                        <h4 class="dishName"> {{item.Dish_Name}}</h4>
+                        <p class="dishDescription">{{item.Dish_Description}}</p>
+                        <button class="btn btn-default" ng-click="addRow(item)">Dodaj</button>
                     </div>
-                    </div>
-                </uib-tab>
-                <uib-tab index="1" heading="Dania główne" style="font-family: 'Cormorant Garamond', cursive;
-                        font-weight: bold; font-size: 25px; color: black">
-                    <table class="table  table-bordered">
-                        <tr ng-repeat="menu in menu | filter: {Category_Id: 2 }">
-                            <td>{{menu.Dish_Name}}
-                                {{menu.Dish_Description}}
-                            </td>
-                            <td><input class="btn btn-outline-info" type="button" ng-click="addRow(menu)"
-                                       value="Dodaj"></td>
-                        </tr>
-                    </table>
-                </uib-tab>
-                <uib-tab index="2" heading="Zupy" style="font-family: 'Cormorant Garamond', cursive;
-                        font-weight: bold; font-size: 25px; color: black">
-                    <table class="table  table-bordered">
-                        <tr ng-repeat="menu in menu | filter: {Category_Id: 3 }">
-                            <td>{{menu.Dish_Name}}
-                                {{menu.Dish_Description}}
-                            </td>
-                            <td><input class="btn btn-outline-info" type="button" ng-click="addRow(menu)"
-                                       value="Dodaj"></td>
-                        </tr>
-                    </table>
                 </uib-tab>
             </uib-tabset>
         </div>
@@ -214,9 +188,7 @@
     </div>
     <!-- kończe akapit menu -->
 </div> <!-- kończe formularza wprowadzania danych rezerwacji -->
-<div class="tableSettings" style="position: center; ">
-
-</div>
+<div class="tableSettings" style="position: center; "></div>
 
 
 

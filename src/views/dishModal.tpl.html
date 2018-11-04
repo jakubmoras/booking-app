@@ -4,10 +4,9 @@
 <div class="modal-body" style="background-color: transparent" id="modal-body">
     <div class="row">
         <div class="col-xs-8">
-            <div class="modalText"> Wybrana potrawa:
-                {{ctrl.menu.Dish_Name}}
-                <input ng-model="ctrl.portionsCount" type="text" ng-value="ctrl.booking.personsCount"
-                       ng-change="ctrl.calculatePrice()" style="width: 50px; text-align: center"/> porcji
+            <div class="modalText"> Wybrana potrawa: {{ctrl.menu.Dish_Name}}
+                <input ng-model="ctrl.portionsCount" type="text" class="form-control text-center"
+                       ng-change="ctrl.calculatePrice()" style="width: 50px; display:inline;"/> porcji
             </div>
         </div>
     </div>

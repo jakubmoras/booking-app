@@ -336,25 +336,34 @@ input:checked + .slider:before {
 }
 
 .modalText {
-   font-family:Cormorant+Garamond;
+    font-family: Cormorant+Garamond;
     font-size: 15px;
     margin-bottom: 10px
 }
 
-#canvas{
+#canvas {
 
     /*   border-bottom: 1px solid rgba(0,0,0,0.3);
        background-color: #FFF;
        box-shadow: 0 9px 20px -5px rgba(0,0,0,0.8); */
 }
-#canvasCircle{
-    border-bottom: 1px solid rgba(0,0,0,0.3);
+
+#canvasCircle {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background-color: #FFF;
-    box-shadow: 0 9px 20px -5px rgba(0,0,0,0.8);
+    box-shadow: 0 9px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
 .columns {
     columns: 3;
 }
 
+/* MENU */
+#main-menu .tab-pane {
+    font-family: 'Cormorant Garamond', cursive;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    min-height: 300px;
+}
 
