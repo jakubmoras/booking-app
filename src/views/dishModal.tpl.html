@@ -1,29 +1,22 @@
 <div class="modal-header">
-    <h3 class="modal-title">Dodaj opcje</h3>
+    <h3 class="modal-title" style="font-family:Cormorant+Garamond; font-weight: bold ">Opcje wyboru potrawy:</h3>
 </div>
-<div class="modal-body" id="modal-body">
-    <p>{{ctrl.dish.name}}</p>
-    <pre>{{ctrl.dish | json}}</pre>
-    <pre>{{ctrl.booking | json}}</pre>
+<div class="modal-body" style="background-color: transparent" id="modal-body">
     <div class="row">
-        <div class="col-xs-12 radio-inline">
-            <label class="col-xs-6 ">
-                <input type="radio" class="selectOptionRadio" ng-model="selectOptionRadio" name="selecForAll"
-                       ng-value="1">
-                Jedna porcja na osobę
-            </label>
-            <label class="col-xs-6 ">
-                <input type="radio" class="selectOptionRadio" ng-model="selectOptionRadio" name="selectPortion"
-                       ng-value="2">
-                Wspólny półmisek
-            </label>
+        <div class="col-xs-8">
+            <div class="modalText"> Wybrana potrawa:
+                {{ctrl.menu.Dish_Name}}
+                <input ng-model="ctrl.portionsCount" type="text" ng-value="ctrl.booking.personsCount"
+                       ng-change="ctrl.calculatePrice()" style="width: 50px; text-align: center"/> porcji
+            </div>
         </div>
-        <label class="col-xs-8">podaj ilośc porcji
-            <input type="text" class="portionsCount" ng-model="portionsCount"
-                   ng-change="ctrl.calculatePrice(portionsCount)">
-        </label>
-        <p>do zapłaty {{ctrl.dish.calculatedPrice}}</p>
     </div>
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="modalText">Do zapłaty: {{ctrl.calculatedPrice}}</div>
+        </div>
+    </div>
+</div>
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>
