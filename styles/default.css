@@ -1,57 +1,55 @@
-#restaurant-photo-1 {
-    width: 400px;
+
+#h2 {
+    font-family: 'Cabin', sans-serif;
 }
 
-#restaurant-photo-2 {
-    width: 500px;
-    height: 200px;
-    background-image: url("https://www.tropical-islands.de/fileadmin/_processed_/csm_TI_RESTAURANT_PALMBEACH4_RGB_2000x860_70f4da8db5.jpg");
+.helpButton{
+    background: url("../images/help-3.svg");
+    width: 20px;
+    height: 20px;
     background-size: cover;
+    margin-top:15px;
+    border: none;
+
 }
 
+
+.nav-tabs{
+    background-color:white;
+    border:none !important;
+
+
+}
+
+.nav-tabs > li > a{
+    border-radius: 5px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+    color: black;
+    padding: 2px;
+
+}
+.nav-tabs > li > a:hover{
+    background-color: white !important;
+    border-radius: 5px;
+    color:black;
+    border:none;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover{
+    background-color:white !important;
+    color:lightblue !important;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    border:1px !important;
+    border-bottom: 5px solid #ac2925 !important;
+    margin-bottom: 20px;
+
+}
 .clickable {
     cursor: pointer;
-}
-
-#Info {
-    width: 15px;
-    height: 15px;
-    background-image: url("../../booking-app/info.jpg");
-    background-size: cover;
-}
-
-.InfoBTN {
-    width: 15px;
-    height: 15px;
-    background-image: url("../../booking-app/info.jpg");
-    background-size: cover;
-}
-
-.tableSettigsRound_base {
-    background-image: url("../../booking-app/Images/table_banquet.jpg");
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-    text-align: left;
-    caption-side: bottom;
-}
-
-.tableSettigsRound_changed {
-    background-image: url("../../booking-app/Images/table_round.png");
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-    text-align: left;
-}
-
-.textStyle {
-    font-size: 34px;
-    background-color: red;
-    color: #ff282a;
-}
-
-.buttonLabel {
-    font-size: 9px;
+    font-weight: Bold;
 }
 
 #MENU {
@@ -77,44 +75,16 @@
 
 }
 
-.welcome-text p {
-    font-family: 'Cormorant Garamond', serif;
-    padding: 20px;
-    margin-bottom: 10px;
-    font-size: 30px;
-    right: -500px;
-    text-align: center;
-}
 
-.welcome-text span {
-    font-family: 'Cormorant Garamond', serif;
-    display: inline-block;
-    padding: 10px;
-    font-size: 20px;
-    /* right: -500px;*/
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.steps {
-    font-family: 'Cormorant Garamond', serif;
-    display: inline-block;
-
-    padding: 5px;
-    margin: 20px;
-    font-size: 30px;
-    font-weight: bolder;
-}
-
-.noPerLabel {
+.formReservationLabels {
     padding: 10px;
     left: 0px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cabin', sans-serif;
     font-size: 20px;
-    color: darkblue;
-    border-bottom: #DEDEC9;
+    color: black;
+  /*  border-bottom: #DEDEC9;
     border-bottom-style: solid;
-    border-bottom-width: 1px;
+    border-bottom-width: 1px; */
     text-align: left;
 }
 
@@ -131,14 +101,14 @@
     font-family: 'Cormorant Garamond', serif;
 }
 
-.reservation-title {
+/*.reservation-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 20px;
     text-align: left;
-}
+}*/
 
 .accessories-title {
     font-family: 'Cormorant Garamond', serif;
@@ -221,106 +191,6 @@ input:checked + .boxForCheckingBckg:before, input:checked + .boxForCheckingBckg_
     top: 10px;
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 70px;
-    height: 36px;
-    /*  background-color: #3c763d;*/
-    border-style: solid;
-    border-color: #fff;
-    border-radius: 10px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #ff282a;
-    border-radius: 10px;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "Nie";
-    text-align: center;
-    padding: 3px;
-    font-size: 13px;
-    height: 26px;
-    width: 33px;
-    left: 4px;
-    bottom: 4px;
-    border-width: 1px;
-    border-radius: 15px;
-    border-color: red;
-    border-style: solid;
-    /*   background-color: darkred; */
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    border-width: 1px;
-    border-style: solid;
-    border-color: green;
-    border-radius: 10px;
-}
-
-input:checked + .slider:before {
-    background-color: #FFFFFF;
-    position: absolute;
-    content: "Tak";
-    height: 26px;
-    width: 33px;
-    left: 4px;
-    bottom: 4px;
-    border-width: 1px;
-    border-radius: 15px;
-    border-color: green;
-    border-style: solid;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(126px);
-    transform: translateX(26px);
-}
-
-.cb2 {
-    display: inline-block;
-    font-family: 'Shrikhand', cursive;
-    font-size: 16px;
-    text-align: left;
-    margin-bottom: 20px;
-    text-decoration: underline;
-}
-
-.cb2 {
-    cursor: pointer;
-}
-
-.cb2:active {
-    font-size: 40px;
-}
 
 .dialog-dish-modal .modal-body {
     background: lightgrey;
@@ -341,12 +211,7 @@ input:checked + .slider:before {
     margin-bottom: 10px
 }
 
-#canvas {
 
-    /*   border-bottom: 1px solid rgba(0,0,0,0.3);
-       background-color: #FFF;
-       box-shadow: 0 9px 20px -5px rgba(0,0,0,0.8); */
-}
 
 #canvasCircle {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);

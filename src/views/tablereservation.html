@@ -2,23 +2,17 @@
 <!-- TODO WIP remove once finish-->
 <!--<p ng-init="addRow({name: 'Krewetki królewskie', 'description': 'Lorem ipsum bla bla bla...'})"> Fake init</p>-->
 
-<div class="container" style=" background-color: #EFEFEF"> <!-- zaczynam kontener strony -->
-    <div class="row " style=" margin: 5px;"> <!-- Zaczynam akapit nagłówkai -->
-        <div class="col-xs-12">
-            <div class=" reservation-title col-xs-12">
-                Wypełnij formularz i wybierz dodatkowe opcje swojej rezerwacji
-            </div>
-        </div>
+<div class="container"> <!-- zaczynam kontener strony -->
+    <div class="row"> <!-- Zaczynam akapit nagłówkai -->
+        <h2>Wypełnij formularz i wybierz dodatkowe opcje swojej rezerwacji</h2>
     </div> <!-- kończe akapit nagłówka-->
 
 
     <div class="form-horizontal "> <!-- rozpoczęcie formularza wprowadzania danych rezerwacji -->
-
-
-        <div class="col-xs-12" style="margin-bottom: 30px">
-            <div class="row">
+        <div class="row">
+            <div class="col-xs-12" style="margin-bottom: 30px">
                 <div class="form-group ">
-                    <label class="noPerLabel col-xs-3 ">Prosze podaj liczbę
+                    <label class="formReservationLabels col-xs-3 ">Prosze podaj liczbę
                         gości </label>
                     <div class="noOfperson col-xs-3">
                         <input ng-model="formData.personsCount" class="form-control " type="number"
@@ -26,29 +20,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label class="noPerLabel col-xs-3 ">Prosze podaj dzień i godzinę </label>
+                    <label class="formReservationLabels col-xs-3 ">Prosze podaj dzień i godzinę </label>
                     <div class="noOfperson col-xs-3">
                         <input ng-model="formData.dateTimeOfReservation" class="form-control " type="datetime-local">
                     </div>
-                    <input class="btn btn-primary btn-sm" type="button" value="Sprawdź dostępność"
-                           style="margin-top:7px;">
+                    <input class="helpButton" type="button"/>
                 </div>
                 <div class="row">
-                    <label class="noPerLabel col-xs-3 ">Prosze podaj numer telefonu </label>
+                    <label class="formReservationLabels col-xs-3 ">Prosze podaj numer telefonu </label>
                     <div class="noOfperson col-xs-3">
                         <input ng-model="formData.telephoneNumber" class="form-control" type="text"
                                placeholder="123-123-123">
                     </div>
                 </div>
                 <div class="row">
-                    <label class="noPerLabel col-xs-3 ">Prosze podaj email </label>
+                    <label class="formReservationLabels col-xs-3 ">Prosze podaj email </label>
                     <div class="noOfperson col-xs-3">
                         <input ng-model="formData.Mail" class="form-control" type="text"
                                placeholder="jan.kowalski@mail.com">
                     </div>
                 </div>
                 <div class="row">
-                    <label class="noPerLabel col-xs-3 ">Dodatkowe informacje </label>
+                    <label class="formReservationLabels col-xs-3 ">Dodatkowe informacje </label>
                     <div class="noOfperson col-xs-3">
                         <input ng-model="formData.Mail" class="form-control  " type="text"
                                placeholder="Dodatkowe informacje" style="height: 100px; text-align: start">
@@ -56,97 +49,123 @@
                 </div>
             </div>
         </div>
-        <!-- Zaczynam akapit dodatków do rezerwacji -->
-
-        <div class="row">
-            <div class="accessories-title">W tym miejscu mozesz wybrać dodatki do rezerwacji</div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="col-xs-3 ">
-                    <label class="boxForChecking">
-                        <input ng-model="formdata.accesories_1" type="checkbox">
-                        <span class="boxForCheckingBckg"></span>
-                    </label>
-                    <p style=" height:20px; text-align: center">Świece dekoracyjne</p>
-                </div>
-
-                <div class="col-xs-3">
-                    <label class="boxForChecking">
-                        <input ng-model="formdata.accesories_2" type="checkbox">
-                        <span class="boxForCheckingBckg_candle"></span>
-                    </label>
-                    <p style=" height:20px; text-align: center;">Serwetka dekoracyjna </p>
-                </div>
-                <div class="col-xs-3">
-                    <label class="boxForChecking">
-                        <input ng-model="formdata.accesories_3" class="accessories_1" type="checkbox"
-                               ng-checked="drawCircles()">
-                        <span class="boxForCheckingBckg_candle_visit_cards"></span>
-                    </label>
-                    <p style=" height:20px; text-align: center">Wizytówki</p>
-                </div>
-                <div class="col-xs-3">
-                    <label class="boxForChecking">
-                        <input ng-model="formdata.accesories_4" class="accessories_1" type="checkbox">
-                        <span class="boxForCheckingBckg_aperitif"></span>
-                    </label>
-                    <p style=" height:20px; text-align: center;">Aperitif </p>
-                </div>
-            </div>
-        </div> <!-- kończe akapit dodatków do rezerwacji -->
     </div>
-
-    <!--   <div class="row" style="background-color: yellow">
-           <label class="radio-inline ">
-               <input type="radio" ng-model="tableSelector1" name="optradio" class="tableSelector" value="square">
-               Stolik prostokąt
-           </label>
-           <label class="radio-inline">
-               <input type="radio" ng-model="tableSelector2" name="optradio" class="tableSelector" value="round">
-               Stolik okrągły
-           </label>
-       </div> -->
-
-    <div ng-show="formdata.accesories_3">
-        <div class="row">
-            <p class="accessories-title">Wybrałeś opcję wizytówek podaj treść wizytówki dla poszczególnych osób</p>
-            <div class="col-xs-4">
-                <canvas width="400" height="120" id="canvas" style="position: relative; top:-30px"></canvas>
-                <!--      <canvas width="300" height="200" id="canvasCircle" style="position: absolute;left: 300px"></canvas> -->
-            </div>
-            <div class="col-xs-8">
-                <div ng-repeat="personLabels in personLabels ">
-                    {{personLabels.zmienna}}
-                    <input type="text"/>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div ng-show="!formdata.accesories_3">
-        <p>Drugi przypadek wizytówek</p>
-    </div>
-
-
-    <!-- zaczynam kontrolowanie sekcji menu-->
-
+    <toggle ng-model="toggleValue1" on="TAK" off="NIE"></toggle>
+    <!--koniec testu tabów -->
     <div class="row">
-        <div clas="col-xs-12">
-            <hr style="height: 3px; background: lightgray; border: 0px;">
-            <p class=" col-xs-5 reservation-title" style="top: -10px;text-align: left">Czy chciałbyś wybrać
-                menu </p>
-            <div clas="col-xs-3">
-                <toggle ng-model="toggleValue" ng-change="changed()"
-                " on="TAK" off="NIE""></toggle>
-                <!--              <label class="switch">
-                                  <input type="checkbox" ng-model="reservationType" name="reservationType" ng-value="2">
-                                  <span class="slider"></span>
-                              </label> -->
+        <div class="col-xs-12">
+            <!-- test tabów -->
+            <uib-tabset id="reservationOptions">
+                <uib-tab index=1 heading="Dekoracja stołu">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <toggle ng-model="toggleValue2" on="TAK" off="NIE"></toggle>
+                        </div>
+                    </div>
+
+                </uib-tab>
+                <uib-tab index=2 heading="Przed podaniem">
+
+                </uib-tab>
+                <uib-tab index=3 heading="Menu">
+
+                </uib-tab>
+
+            </uib-tabset>
+        </div>
+    </div>
+</div>
+<!-- Zaczynam akapit dodatków do rezerwacji -->
+
+<div class="row">
+    <h2> W tym miejscu mozesz wybrać dodatki do rezerwacji </h2>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="col-xs-3 ">
+            <label class="boxForChecking">
+                <input ng-model="formdata.accesories_1" type="checkbox">
+                <span class="boxForCheckingBckg"></span>
+            </label>
+            <p style=" height:20px; text-align: center">Świece dekoracyjne</p>
+        </div>
+
+        <div class="col-xs-3">
+            <label class="boxForChecking">
+                <input ng-model="formdata.accesories_2" type="checkbox">
+                <span class="boxForCheckingBckg_candle"></span>
+            </label>
+            <p style=" height:20px; text-align: center;">Serwetka dekoracyjna </p>
+        </div>
+        <div class="col-xs-3">
+            <label class="boxForChecking">
+                <input ng-model="formdata.accesories_3" class="accessories_1" type="checkbox"
+                       ng-checked="drawCircles()">
+                <span class="boxForCheckingBckg_candle_visit_cards"></span>
+            </label>
+            <p style=" height:20px; text-align: center">Wizytówki</p>
+        </div>
+        <div class="col-xs-3">
+            <label class="boxForChecking">
+                <input ng-model="formData.accesories_4" class="accessories_1" type="checkbox">
+                <span class="boxForCheckingBckg_aperitif"></span>
+            </label>
+            <p style=" height:20px; text-align: center;">Aperitif </p>
+        </div>
+    </div>
+</div> <!-- kończe akapit dodatków do rezerwacji -->
+
+
+<!--   <div class="row" style="background-color: yellow">
+       <label class="radio-inline ">
+           <input type="radio" ng-model="tableSelector1" name="optradio" class="tableSelector" value="square">
+           Stolik prostokąt
+       </label>
+       <label class="radio-inline">
+           <input type="radio" ng-model="tableSelector2" name="optradio" class="tableSelector" value="round">
+           Stolik okrągły
+       </label>
+   </div> -->
+
+<div ng-show="formdata.accesories_3">
+    <div class="row">
+        <div class="accessories-title">Wybrałeś opcję wizytówek podaj treść wizytówki dla poszczególnych osób</div>
+        <div class="col-xs-4">
+            <canvas width="400" height="120" id="canvas" style="position: relative; top:-30px"></canvas>
+            <!--      <canvas width="300" height="200" id="canvasCircle" style="position: absolute;left: 300px"></canvas> -->
+        </div>
+        <div class=" columns col-xs-8">
+            <div ng-repeat="item in personLabels ">
+                {{item.zmienna}}
+                <input type="checkbox" ng-show="item.aperitif" checked/>
+                <input type="text"/>
             </div>
         </div>
     </div>
+</div>
+
+<div ng-show="!formdata.accesories_3">
+    <p>Drugi przypadek wizytówek</p>
+</div>
+
+
+<!-- zaczynam kontrolowanie sekcji menu-->
+
+<div class="row">
+    <div clas="col-xs-12">
+        <hr style="height: 3px; background: lightgray; border: 0px;">
+        <p class=" col-xs-5 reservation-title" style="top: -10px;text-align: left">Czy chciałbyś wybrać
+            menu </p>
+        <div clas="col-xs-3">
+            <toggle ng-model="toggleValue" ng-change="changed()"  on="TAK" off="NIE"></toggle>
+            <!--              <label class="switch">
+                              <input type="checkbox" ng-model="reservationType" name="reservationType" ng-value="2">
+                              <span class="slider"></span>
+                          </label> -->
+        </div>
+    </div>
+</div>
 </div>
 
 <div ng-show="toggleValue">

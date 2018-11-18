@@ -67,10 +67,15 @@ function tableReservationsController($scope, $window, $uibModal, dataApi) {
 
     $scope.personLabelTable = function () {
         let personCountChange = $scope.formData.personsCount - $scope.personLabels.length;
+        var aperitif = false
+        console.log($scope.formData.accesories_4);
         if (personCountChange > 0) {
+            if($scope.formData.accesories_4) {
+                 aperitif = true }
             for (var s = 1; s <= personCountChange; s++) {
                 $scope.personLabels.push({
                     zmienna: $scope.personLabels.length + 1,
+                    aperitif: aperitif
                 });
             }
         }
