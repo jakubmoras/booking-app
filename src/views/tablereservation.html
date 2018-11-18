@@ -57,7 +57,7 @@
             <!-- test tabów -->
             <uib-tabset id="reservationOptions">
                 <uib-tab index=1 heading="Dekoracja stołu">
-                    <div class="row">
+                    <div class="row" ng-if="viewReady">
                         <div class="col-xs-12">
                             <toggle ng-model="toggleValue2" on="TAK" off="NIE"></toggle>
                         </div>

@@ -1,6 +1,6 @@
 'use strict';
 
-function tableReservationsController($scope, $window, $uibModal, dataApi) {
+function tableReservationsController($scope, $window, $timeout, $uibModal, dataApi) {
 
     const menu = {};
     var circles = [];
@@ -12,6 +12,8 @@ function tableReservationsController($scope, $window, $uibModal, dataApi) {
 
     $scope.selectedDishes = [];
 
+    $scope.viewReady = false;
+
     $scope.menuTabs = [
         {id: 1, name: 'Przystawki'},
         {id: 2, name: 'Dania główne'},
@@ -21,6 +23,9 @@ function tableReservationsController($scope, $window, $uibModal, dataApi) {
         dataApi.getMenu().then(menu => {
             $scope.menu = menu;
         });
+        $timeout(() => {
+            $scope.viewReady = true;
+        }, 50);
     };
 
     $scope.drawCircles = function () {
