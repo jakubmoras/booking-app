@@ -2,22 +2,37 @@
 
 function tableReservationsController($scope, $window, $timeout, $uibModal, dataApi) {
 
+    $scope.imIndexCount = 0;
+    $scope.selected = false;
     const menu = {};
+    const extras = {};
     var circles = [];
+    $scope.currentIndex = 0;
 
     $scope.formData = {
         personsCount: 0
     };
     $scope.personLabels = [];
-
+    $scope.visitCardNames = [];
     $scope.selectedDishes = [];
-
+    $scope.selectedExtras = [];
     $scope.viewReady = false;
 
     $scope.menuTabs = [
         {id: 1, name: 'Przystawki'},
         {id: 2, name: 'Dania główne'},
         {id: 3, name: 'Napoje'}];
+
+    $scope.extras = {
+        'Visit Card': [],
+        'Napkin': [],
+        'Candle': []
+    };
+    $scope.images = {
+        'Visit Card': false,
+        'Napkin': false,
+        'Candle': false
+    };
 
     function init() {
         dataApi.getMenu().then(menu => {
@@ -28,84 +43,76 @@ function tableReservationsController($scope, $window, $timeout, $uibModal, dataA
         }, 50);
     };
 
-    $scope.drawCircles = function () {
-        if ((personCount) !== 0) {
-            var personCount = $scope.formData.personsCount;
-            circles.splice(0, circles.length);
-            const canvasElem = document.getElementById('canvas');
-            const ctx = canvasElem.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            var x = 30;
-            var y = 20;
-
-            for (var i = 0; i <= (personCount - 1); i++) {
-                if ((i) % 2 !== 0) {
-                    y = 95;
-                }
-                else {
-                    y = 25;
-                    if (i > 1) {
-                        x = x + 30
-                    }
-                }
-
-                circles.push({
-                    x1: x,
-                    y1: y,
-                    radius: 10,
-                    color: 'rgb(0,255,0)',
-                    count: i + 1
-                });
-            }
-            circles.forEach(circle => {
-                    ctx.beginPath();
-                    ctx.arc(circle.x1, circle.y1, circle.radius, 0, 2 * Math.PI);
-                    ctx.fillStyle = circle.color;
-                    ctx.fill();
-                    ctx.fillStyle = 'black';
-                    ctx.fillText(circle.count, circle.x1 - 3, circle.y1 + 2);
-                }
-            );
-            ctx.strokeRect(23, 40, x - 15, 40);
-        }
-    };
-
-    $scope.personLabelTable = function () {
-        let personCountChange = $scope.formData.personsCount - $scope.personLabels.length;
-        var aperitif = false
-        console.log($scope.formData.accesories_4);
-        if (personCountChange > 0) {
-            if($scope.formData.accesories_4) {
-                 aperitif = true }
-            for (var s = 1; s <= personCountChange; s++) {
-                $scope.personLabels.push({
-                    zmienna: $scope.personLabels.length + 1,
-                    aperitif: aperitif
-                });
-            }
-        }
-        else {
-            $scope.personLabels.splice($scope.personLabels.length - Math.abs(personCountChange), Math.abs(personCountChange))
-
-        }
-    };
-
-    function isIntersect(point, circle) {
-        return Math.sqrt((point.x - circle.x1) ** 2 + (point.y - circle.y1) ** 2) < circle.radius;
-    }
-
-    canvas.addEventListener('click', (e) => {
-        var rect = canvas.getBoundingClientRect();
-        const point = {
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
-        };
-        circles.forEach(circle => {
-            if (isIntersect(point, circle)) {
-                $window.alert("Kliknąłeś w kropkę" + circle.count)
+    $scope.onExtrasToggle = function (category) {
+        dataApi.getExtras(category).then(extras => {
+            $scope.extras[category] = extras;
+            for (var im = 0; im <= 8; im++) {
+                $scope.extras[category][im].visible = true
             }
         });
-    });
+    };
+
+    $scope.next = function (category) {
+        if (8 + $scope.imIndexCount < $scope.extras[category].length - 1) {
+            $scope.imIndexCount = $scope.imIndexCount + 1;
+            $scope.extras[category].forEach(function (image) {
+                image.visible = false;
+            });
+            for (var im = $scope.imIndexCount; im <= 8 + $scope.imIndexCount; im++) {
+                $scope.extras[category][im].visible = true
+            }
+        }
+    };
+    $scope.previous = function (category) {
+        if ($scope.imIndexCount - 1 > 0) {
+            $scope.imIndexCount = $scope.imIndexCount - 1
+        }
+        $scope.extras[category].forEach(function (image) {
+            image.visible = false;
+        })
+        for (var im = $scope.imIndexCount; im <= 8 + $scope.imIndexCount; im++) {
+            $scope.extras[category][im].visible = true
+        }
+    };
+    $scope.checkChoosen = function (id, category) {
+        $scope.images[category] = $scope.extras[category].find(image => image.Id === id);
+    };
+
+    $scope.visitCardSelect = function () {
+        const booking = angular.copy($scope.formData, {});
+        const modalInstance = $uibModal.open({
+            templateUrl: 'src/views/visitCardModal.tpl.html',
+            controller: 'visitCardModalController',
+            controllerAs: 'ctrl',
+            windowTopClass: 'dialog-dish-modal',
+            backdrop: false,
+            resolve: {
+                booking: _.pick(booking, ['personsCount']),
+                menu: _.clone(menu, true)
+            }
+        });
+
+        modalInstance.result.then(function (results) {
+            $scope.visitCardNames.push(_.cloneDeep(results.$value.obiekt));
+        }).catch(function (err) {
+            console.log(err);
+        })
+    };
+    $scope.extrasCategorySelect = function (category) {
+
+        var showButton = category == 'Visit Card' ? 'true' : 'false';
+        var index = $scope.selectedExtras.findIndex(x => x.category == category);
+        if (index == -1) {
+            $scope.selectedExtras.push({
+                category: category,
+                selectedImageName: $scope.images[category].Description,
+                showButton: showButton,
+            })
+        }
+        else {
+            $scope.selectedExtras[index].selectedImageName = $scope.images[category].Description;
+        }
+    };
 
     $scope.addRow = function (menu) {
         const booking = angular.copy($scope.formData, {});
@@ -125,7 +132,7 @@ function tableReservationsController($scope, $window, $timeout, $uibModal, dataA
                 console.log('no results passed');
                 return;
             }
-            $scope.selectedDishes.push(_.cloneDeep(results.$value.menu));
+            $scope.selectedDishes.push(_.clone(results.$value.menu));
             console.log(results.$value.menu)
         }).catch(function (err) {
             if (err) {
@@ -135,14 +142,6 @@ function tableReservationsController($scope, $window, $timeout, $uibModal, dataA
     };
 
 
-    /*      const found = _.find($scope.selectedDishes, dish => dish.name == name);
-         if (!found) {
-             $scope.selectedDishes.push({'name': dish.name})
-             console.log('aaa')
-         }
-         else {
-             $window.alert('Danie zostało już dodane')
-         }*/
-
     init();
+
 };

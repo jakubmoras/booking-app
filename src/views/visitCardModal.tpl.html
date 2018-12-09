@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h3 class="modal-title" style="font-family:Cormorant+Garamond; font-weight: bold ">Tekst na wizytówkach</h3>
+</div>
+<div class="modal-body" style="background-color: transparent" id="modal-body">
+    <div class="row">
+        <div class="col-xs-5">
+            <div ng-repeat="person in ctrl.visitCardPerson1">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <p>{{person.personId}}</p>
+                    </div>
+                    <div class="col-xs-7">
+                        <input type="text" class="visitCardText" ng-model="person.name">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-7">
+            <canvas width="200" height="120" id="canvas"
+                    style="position: relative;left:80px; background-color: #D9D9D9"></canvas>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="ctrl.cancel()">Cancel</button>
+</div>

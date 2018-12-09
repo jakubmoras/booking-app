@@ -10,15 +10,11 @@
     background-size: cover;
     margin-top:15px;
     border: none;
-
 }
-
 
 .nav-tabs{
     background-color:white;
     border:none !important;
-
-
 }
 
 .nav-tabs > li > a{
@@ -47,6 +43,72 @@
     margin-bottom: 20px;
 
 }
+
+.cardSliderBlock {
+    width: 808px;
+    height: 150px;
+}
+.cardSlider {
+    display: inline-block;
+    margin-left: 1px;
+    width: 103px;
+    height: 75px;
+    background-size: cover;
+
+}
+img.cardSlider:hover {
+
+    border: #000000;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.center {
+    display: flex;
+    align-items:center;
+
+}
+.bigImage {
+    width: 250px;
+    height: 150px;
+}
+.imgContainer{
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    width: 250px;
+    height: 150px;
+    background-size: cover;
+    left: 39%;
+}
+
+.imgContainer .imgText {
+    position: absolute; /* Position the background text */
+    bottom: 0;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1; /* Grey text */
+    padding: 20px; /* Some padding */
+     width: 250px;
+     height: 20px;
+    text-align: center;
+
+}
+.visitCardSelected {
+    font-size: 15px;
+
+}
+.delete {
+    background: url("../images/button_cancel.ico");
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    margin-top:5px;
+    left: -20px;
+
+    border: none;
+}
+
 .clickable {
     cursor: pointer;
     font-weight: Bold;
@@ -97,100 +159,6 @@
     margin: 15px;
 }
 
-.accesoriess {
-    font-family: 'Cormorant Garamond', serif;
-}
-
-/*.reservation-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    text-align: left;
-}*/
-
-.accessories-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 50px;
-    text-align: left;
-}
-
-.boxForCheckingBckg {
-    background-image: url('../images/candle-table.jpeg');
-}
-
-.boxForCheckingBckg_candle {
-    background-image: url('../images/napkin.jpeg');
-}
-
-.boxForCheckingBckg_candle_visit_cards {
-    background-image: url('../images/visit-card.jpeg');
-}
-
-.boxForCheckingBckg_aperitif {
-    background-image: url('../images/aperitif.jpeg');
-}
-
-.boxForChecking {
-    width: 100px;
-    height: 67px;
-    left: 70px;
-    position: relative;
-    background-color: #ffffff;
-    display: inline-block;
-    visibility: visible;
-    border: 10px;
-    border-color: #ff282a;
-    z-index: 1;
-}
-
-.boxForChecking input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.boxForCheckingBckg, .boxForCheckingBckg_candle, .boxForCheckingBckg_candle_visit_cards, .boxForCheckingBckg_aperitif {
-    background-color: #ff282a;
-    display: inline-block;
-    position: absolute;
-    width: 100px;
-    height: 67px;
-    background-size: cover;
-    /*    margin-bottom: 5px;
-        margin-right: 5px; */
-    font-size: 0px;
-    color: #ff282a;
-    left: 0px;
-}
-
-.boxForCheckingBckg:before, .boxForCheckingBckg_candle:before, .boxForCheckingBckg_candle_visit_cards:before, .boxForCheckingBckg_aperitif:before {
-    position: absolute;
-    content: "";
-    width: 50px;
-    height: 50px;
-    top: 30px;
-
-    background-image: url("../images/iconmonstr-check-mark-3.svg");
-    background-size: cover;
-    display: none;
-}
-
-input:checked + .boxForCheckingBckg:before, input:checked + .boxForCheckingBckg_candle:before, input:checked + .boxForCheckingBckg_candle_visit_cards:before, input:checked + .boxForCheckingBckg_aperitif:before {
-    position: absolute;
-    content: "";
-    width: 50px;
-    height: 50px;
-    background-image: url("../images/iconmonstr-check-mark-3.svg");
-    background-size: cover;
-    display: inline-block;
-    top: 10px;
-}
-
 
 .dialog-dish-modal .modal-body {
     background: lightgrey;
@@ -211,8 +179,6 @@ input:checked + .boxForCheckingBckg:before, input:checked + .boxForCheckingBckg_
     margin-bottom: 10px
 }
 
-
-
 #canvasCircle {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background-color: #FFF;
@@ -230,5 +196,17 @@ input:checked + .boxForCheckingBckg:before, input:checked + .boxForCheckingBckg_
     font-size: 25px;
     color: black;
     min-height: 300px;
+}
+
+.vCBackground {
+    background-image: url("../Images/stripes-light.png");
+    background-size: cover;
+}
+
+.visitCardText{
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
 }
 

@@ -1,4 +1,4 @@
-angular.module('bookingApp',['ngRoute','ui.bootstrap', 'ui.toggle']);
+angular.module('bookingApp',['ngRoute','ui.bootstrap', 'ui.toggle', 'ngAnimate']);
 
 angular.module('bookingApp').config(['$routeProvider', function config($routeProvider) {
     $routeProvider

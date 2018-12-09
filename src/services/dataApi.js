@@ -10,13 +10,19 @@ function dataApi($http) {
         return $http.post(`${apiBaseUrl}reservation`, data);
     }
 
-    function getMenu(data) {
+    function getMenu() {
         return $http.get(`${apiBaseUrl}menu`).then(results => results.data);
     }
+
+    function getExtras(category) {
+        return $http.get(`${apiBaseUrl}extras/${category}`).then(results => results.data);
+    }
+
     return {
         getReservations,
         saveReservation,
-        getMenu
+        getMenu,
+        getExtras
     }
 }
 
